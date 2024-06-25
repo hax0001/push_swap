@@ -6,7 +6,7 @@
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 18:05:14 by prossi            #+#    #+#             */
-/*   Updated: 2024/06/24 13:26:20 by nait-bou         ###   ########.fr       */
+/*   Updated: 2024/06/25 13:01:56 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <stddef.h>
 # include <stdint.h>
 # include <stdarg.h>
-# include "push_swap.h"
 
 
 
@@ -62,15 +61,13 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-t_stack	*ft_lstnew(void *content);
+t_stack	*ft_lstnew(long content);
 void	ft_lstadd_front(t_stack **lst, t_stack *new);
 int		ft_lstsize(t_stack *lst);
 t_stack	*ft_lstlast(t_stack *lst);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
-void	ft_lstdelone(t_stack *lst, void (*del)(void*));
-void	ft_lstclear(t_stack **lst, void (*del)(void*));
-void	ft_lstiter(t_stack *lst, void (*f)(void *));
-t_stack	*ft_lstmap(t_stack *lst, void *(*f)(void *), void (*del)(void *));
+void	ft_lstdelone(t_stack *lst);
+void	ft_lstclear(t_stack **lst);
 int		ft_printf(const char *format, ...);
 int		ft_print_char(char c);
 int		ft_print_str(char *str);
@@ -83,5 +80,6 @@ void	ft_putstr(char *s);
 void	ft_putnbr(int n);
 int		ft_strlen2(const char *s);
 char	**free_array(char **ptr, int i);
+void error();
 
 #endif

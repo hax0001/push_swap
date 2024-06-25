@@ -1,6 +1,7 @@
 NAME = libft.a
 
 MFILES = 	ft_atoi.c \
+			error.c \
 			ft_bzero.c \
 			ft_calloc.c \
 			ft_isalnum.c \
@@ -41,8 +42,6 @@ MFILES = 	ft_atoi.c \
 			ft_lstadd_back_bonus.c \
 			ft_lstdelone_bonus.c \
 			ft_lstclear_bonus.c \
-			ft_lstiter_bonus.c \
-			ft_lstmap_bonus.c \
 			ft_print_char.c \
 			ft_print_hex.c \
 			ft_print_nbr.c \

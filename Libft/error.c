@@ -6,11 +6,11 @@
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 01:21:39 by nait-bou          #+#    #+#             */
-/*   Updated: 2024/06/24 11:43:23 by nait-bou         ###   ########.fr       */
+/*   Updated: 2024/06/25 11:10:17 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
 void error()
 {

@@ -6,20 +6,38 @@
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 01:11:43 by nait-bou          #+#    #+#             */
-/*   Updated: 2024/06/24 13:27:44 by nait-bou         ###   ########.fr       */
+/*   Updated: 2024/06/25 12:57:00 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ne_atoi(char *str)
+int check_dup(t_stack *a)
+{
+	t_stack	*tmp;
+	
+	 while (a)
+	 {
+		tmp = a->next;
+		while (tmp)
+		{
+			if (a->nbr == tmp->nbr)
+				return (1);
+			tmp = tmp->next;
+		}
+		a = a->next;
+	 }
+	 return (0);
+}
+
+int new_atoi(char *str)
 {
 	int s;
 	int r;
 
 	s = 1;
 	r = 0;
-	while (*str == " " || (*str >= 9 && *str <= 13))
+	while (*str == 32 || (*str >= 9 && *str <= 13))
 		str++;
 	if (*str == '-')
 	{
@@ -48,7 +66,7 @@ t_stack *sub_mak_stack(char *str)
 
 	i = 0;
 	a = NULL;
-	s = ft_split(str, " ");
+	s = ft_split(str, 32);
 	while (s[i])
 	{
 		j = new_atoi(s[i]);
@@ -65,11 +83,18 @@ t_stack *make_stack(int ac, char **av)
 	int		j;
 	t_stack	*a;
 
+	i = 1;
 	a = NULL;
 	if (ac < 2)
 		error();
 	if (ac == 2)
 		a = sub_mak_stack(av[1]);
 	else
-		
+		while (i < ac)
+		{
+			j = ne_atoi(av[i]);
+			ft_lstadd_back(&a, ft_lstnew(j));
+			i++;
+		}
+	return (a);
 }
