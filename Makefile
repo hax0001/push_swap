@@ -8,6 +8,7 @@ LIBFT_OUTPUT = $(LIBFT_DIR)/$(LIBFT)
 
 FILES = creat_stack.c \
 		push_swap.c \
+		free.c \
 
 OFILS = $(FILES:.c=.o)
 
@@ -20,9 +21,6 @@ all: $(NAME)
 $(NAME): $(OFILS) $(LIBFT)
 	$(CC) $(FLAGS) $(OFILS) $(LIBFT) -o $(NAME)
 
-$(OFILS):
-	$(CC) $(FLAGS) $(FILES)
-
 $(LIBFT):
 	make -C $(LIBFT_DIR)
 	mv $(LIBFT_OUTPUT) .
@@ -34,6 +32,6 @@ clean:
 fclean: clean
 	make fclean -C $(LIBFT_DIR)
 	rm -f $(NAME)
-	rm -f $(PUSH_SWAP_DIR)/$(LIBFT)
+	rm -f $(LIBFT)
 
 re: fclean all

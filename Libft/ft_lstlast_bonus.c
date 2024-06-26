@@ -6,7 +6,7 @@
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 03:54:16 by nait-bou          #+#    #+#             */
-/*   Updated: 2024/06/24 13:23:56 by nait-bou         ###   ########.fr       */
+/*   Updated: 2024/06/26 11:58:02 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_stack	*ft_lstlast(t_stack *lst)
 {
 	if (!lst)
-		error();
+		return (NULL);
 	while (lst -> next != NULL)
 	{
 		lst = lst -> next;

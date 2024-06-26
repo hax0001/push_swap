@@ -6,7 +6,7 @@
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 06:17:14 by nait-bou          #+#    #+#             */
-/*   Updated: 2024/06/25 11:22:59 by nait-bou         ###   ########.fr       */
+/*   Updated: 2024/06/26 12:06:46 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 void	ft_lstdelone(t_stack *lst)
 {
-	if (!lst)
-		error();
 	lst -> nbr = 0;
 	free(lst);
 }

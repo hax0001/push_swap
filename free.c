@@ -1,29 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 23:50:47 by nait-bou          #+#    #+#             */
-/*   Updated: 2024/06/26 12:06:01 by nait-bou         ###   ########.fr       */
+/*   Created: 2024/06/26 12:24:20 by nait-bou          #+#    #+#             */
+/*   Updated: 2024/06/26 12:31:40 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-
-void	ft_lstclear(t_stack **lst)
+void	ft_freestr(char **lst)
 {
-	t_stack	*d;
-	t_stack	*t;
+	char	*n1;
 
-	d = *lst;
-	while (d)
+	if (!lst)
+		return ;
+	while (*lst)
 	{
-		t = d -> next;
-		ft_lstdelone(d);
-		d = t;
+		n1 = *lst;
+		lst++;
+		free(n1);
 	}
 	*lst = NULL;
+}
+void	ft_free(t_stack **lst)
+{
+	t_stack	*tmp;
+
+	if (!lst)
+		return ;
+	while (*lst)
+	{
+		tmp = (*lst)->next;
+		(*lst)->nbr = 0;
+		free(*lst);
+		*lst = tmp;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 01:11:43 by nait-bou          #+#    #+#             */
-/*   Updated: 2024/06/25 12:57:00 by nait-bou         ###   ########.fr       */
+/*   Updated: 2024/06/26 13:04:35 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ int check_dup(t_stack *a)
 	 return (0);
 }
 
-int new_atoi(char *str)
+long new_atoi(char *str)
 {
 	int s;
-	int r;
+	long r;
 
 	s = 1;
 	r = 0;
@@ -50,22 +50,21 @@ int new_atoi(char *str)
 	{
 		if (!ft_isdigit(*str))
 			error();
-		r = r * 10 + (*str + 48); 
+		r = r * 10 + *str - '0';
+		str++;
 	}
 	if ((r * s) > 2147483647 || (r * s) < -2147483648)
 		error();
 	return (r * s);
 }
 
-t_stack *sub_mak_stack(char *str)
+t_stack *sub_mak_stack(char *str, t_stack *a)
 {
-	t_stack *a;
 	char	**s;
 	int		i;
-	int		j;
+	long	j;
 
 	i = 0;
-	a = NULL;
 	s = ft_split(str, 32);
 	while (s[i])
 	{
@@ -73,7 +72,8 @@ t_stack *sub_mak_stack(char *str)
 		ft_lstadd_back(&a, ft_lstnew(j));
 		i++;
 	}
-	free_array(s, i);
+	ft_freestr(s);
+	free(s);
 	return (a);
 }
 
@@ -86,14 +86,17 @@ t_stack *make_stack(int ac, char **av)
 	i = 1;
 	a = NULL;
 	if (ac < 2)
+	{
 		error();
-	if (ac == 2)
-		a = sub_mak_stack(av[1]);
+	}
+	else if (ac == 2)
+	{
+		a = sub_mak_stack(av[1], a);
+	}		
 	else
 		while (i < ac)
 		{
-			j = ne_atoi(av[i]);
-			ft_lstadd_back(&a, ft_lstnew(j));
+			a = sub_mak_stack(av[i], a);
 			i++;
 		}
 	return (a);
