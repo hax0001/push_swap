@@ -6,16 +6,30 @@
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 01:06:50 by nait-bou          #+#    #+#             */
-/*   Updated: 2024/06/27 10:27:57 by nait-bou         ###   ########.fr       */
+/*   Updated: 2024/06/27 11:35:02 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int check_sort(t_stack *a)
+{
+	int	b;
+
+	b = a->nbr;
+	while (a)
+	{
+		if (b > a->nbr)
+			return (0);
+		b = a->nbr;
+		a = a->next;
+	}
+	return (1);
+}
+
 int main(int ac, char **av)
 {
 	t_stack	*a;
-	t_stack	*n;
 
 	a = make_stack(ac, av);
 	if (!a || check_dup(a))
@@ -23,12 +37,8 @@ int main(int ac, char **av)
 		ft_free(&a);
 		error2();
 	}
-	n = a;
-	while (n)
-	{
-		printf("\n %ld \n",n->nbr);
-		n = n->next; 
-	}
+	if (check_sort(a) == 0)
+		write(1,"sort",4);
 	ft_free(&a);
 	return (0);
 }
