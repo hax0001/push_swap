@@ -1,7 +1,6 @@
 NAME = libft.a
 
 MFILES = 	ft_atoi.c \
-			error.c \
 			ft_bzero.c \
 			ft_calloc.c \
 			ft_isalnum.c \

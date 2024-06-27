@@ -6,7 +6,7 @@
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 18:05:14 by prossi            #+#    #+#             */
-/*   Updated: 2024/06/26 12:27:27 by nait-bou         ###   ########.fr       */
+/*   Updated: 2024/06/27 10:32:48 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,6 @@ void	ft_putstr(char *s);
 void	ft_putnbr(int n);
 int		ft_strlen2(const char *s);
 char	**free_array(char **ptr, int i);
-void error();
+
 
 #endif

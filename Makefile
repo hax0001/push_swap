@@ -9,6 +9,7 @@ LIBFT_OUTPUT = $(LIBFT_DIR)/$(LIBFT)
 FILES = creat_stack.c \
 		push_swap.c \
 		free.c \
+		error.c \
 
 OFILS = $(FILES:.c=.o)
 

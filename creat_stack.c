@@ -6,7 +6,7 @@
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 01:11:43 by nait-bou          #+#    #+#             */
-/*   Updated: 2024/06/26 13:04:35 by nait-bou         ###   ########.fr       */
+/*   Updated: 2024/06/27 10:27:32 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,18 @@ int check_dup(t_stack *a)
 	 return (0);
 }
 
-long new_atoi(char *str)
+long new_atoi(char *str, char **s, t_stack *a)
 {
-	int s;
+	int c;
 	long r;
 
-	s = 1;
+	c = 1;
 	r = 0;
 	while (*str == 32 || (*str >= 9 && *str <= 13))
 		str++;
 	if (*str == '-')
 	{
-		s = (-1);
+		c = (-1);
 		str++;
 	}
 	if (*str == '+')
@@ -49,13 +49,13 @@ long new_atoi(char *str)
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
-			error();
+			error(s, a);
 		r = r * 10 + *str - '0';
 		str++;
 	}
-	if ((r * s) > 2147483647 || (r * s) < -2147483648)
-		error();
-	return (r * s);
+	if ((r * c) > 2147483647 || (r * c) < -2147483648)
+		error(s, a);
+	return (r * c);
 }
 
 t_stack *sub_mak_stack(char *str, t_stack *a)
@@ -68,7 +68,7 @@ t_stack *sub_mak_stack(char *str, t_stack *a)
 	s = ft_split(str, 32);
 	while (s[i])
 	{
-		j = new_atoi(s[i]);
+		j = new_atoi(s[i], s, a);
 		ft_lstadd_back(&a, ft_lstnew(j));
 		i++;
 	}
@@ -87,7 +87,7 @@ t_stack *make_stack(int ac, char **av)
 	a = NULL;
 	if (ac < 2)
 	{
-		error();
+		error2();
 	}
 	else if (ac == 2)
 	{
