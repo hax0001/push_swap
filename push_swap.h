@@ -13,6 +13,12 @@ void	ft_freestr(char **lst);
 void	ft_free(t_stack **lst);
 void    error(char **s, t_stack *a);
 void    error2();
+void    sa(t_stack **a, int j);
+void    sa(t_stack **b, int j);
+void    ss(t_stack **a, t_stack **b, int j);
+void    pa(t_stack **a, t_stack **b, int j);
+void    pb(t_stack **a, t_stack **b, int j);
+
 
 
 
