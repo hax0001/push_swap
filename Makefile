@@ -10,6 +10,8 @@ FILES = creat_stack.c \
 		push_swap.c \
 		free.c \
 		error.c \
+		operations_1.c \
+		operations_2.c \
 
 OFILS = $(FILES:.c=.o)
 
