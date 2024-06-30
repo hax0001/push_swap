@@ -12,6 +12,8 @@ FILES = creat_stack.c \
 		error.c \
 		operations_1.c \
 		operations_2.c \
+		operations_3.c \
+		operations_4.c \
 
 OFILS = $(FILES:.c=.o)
 

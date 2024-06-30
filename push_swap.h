@@ -18,7 +18,12 @@ void    sa(t_stack **b, int j);
 void    ss(t_stack **a, t_stack **b, int j);
 void    pa(t_stack **a, t_stack **b, int j);
 void    pb(t_stack **a, t_stack **b, int j);
-
+void    ra(t_stack **a, int j);
+void    rb(t_stack **b, int j);
+void    rr(t_stack **a, t_stack **b, int j);
+void    rra(t_stack **a, int j);
+void    rrb(t_stack **b, int j);
+void    rrr(t_stack **a, t_stack **b, int j);
 
 
 
