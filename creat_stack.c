@@ -6,7 +6,7 @@
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 01:11:43 by nait-bou          #+#    #+#             */
-/*   Updated: 2024/06/27 10:27:32 by nait-bou         ###   ########.fr       */
+/*   Updated: 2024/07/06 15:19:09 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,12 @@ long new_atoi(char *str, char **s, t_stack *a)
 	r = 0;
 	while (*str == 32 || (*str >= 9 && *str <= 13))
 		str++;
+	if ((*str == '-' && *(str + 1) == '\0') || (*str == '+' && *(str + 1) == '\0'))
+		error(s, a);
 	if (*str == '-')
 	{
 		c = (-1);
-		str++;
+		str++;	
 	}
 	if (*str == '+')
 		str++;
@@ -50,8 +52,7 @@ long new_atoi(char *str, char **s, t_stack *a)
 	{
 		if (!ft_isdigit(*str))
 			error(s, a);
-		r = r * 10 + *str - '0';
-		str++;
+		r = r * 10 + *(str++) - '0';
 	}
 	if ((r * c) > 2147483647 || (r * c) < -2147483648)
 		error(s, a);
