@@ -1,58 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   sort_3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 12:24:20 by nait-bou          #+#    #+#             */
-/*   Updated: 2024/07/15 13:07:30 by nait-bou         ###   ########.fr       */
+/*   Created: 2024/07/15 12:45:49 by nait-bou          #+#    #+#             */
+/*   Updated: 2024/07/15 12:51:53 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_freestr(char **lst)
+void sort_3(t_stack *a)
 {
-	char	*n1;
-
-	if (!lst)
-		return ;
-	while (*lst)
-	{
-		n1 = *lst;
-		lst++;
-		free(n1);
-	}
-	*lst = NULL;
-}
-
-void	ft_freestr2(int **lst)
-{
-	int	*n1;
-
-	if (!lst)
-		return ;
-	while (*lst)
-	{
-		n1 = *lst;
-		lst++;
-		free(n1);
-	}
-	*lst = NULL;
-}
-
-void	ft_free(t_stack **lst)
-{
-	t_stack	*tmp;
-
-	if (!lst)
-		return ;
-	while (*lst)
-	{
-		tmp = (*lst)->next;
-		(*lst)->nbr = 0;
-		free(*lst);
-		*lst = tmp;
-	}
+	
 }

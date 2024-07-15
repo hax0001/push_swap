@@ -14,6 +14,12 @@ FILES = creat_stack.c \
 		operations_2.c \
 		operations_3.c \
 		operations_4.c \
+		start_sort.c \
+		creat_s.c \
+		sort_3.c \
+		sort_4.c \
+		sort_5.c \
+		big_sort.c \
 
 OFILS = $(FILES:.c=.o)
 

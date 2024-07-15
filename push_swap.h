@@ -24,8 +24,15 @@ void    rr(t_stack **a, t_stack **b, int j);
 void    rra(t_stack **a, int j);
 void    rrb(t_stack **b, int j);
 void    rrr(t_stack **a, t_stack **b, int j);
-
-
+void    start_sort(t_stack *a, char **str);
+void    get_rank(t_stack *a, char **str);
+void	boble_sort(int **arr);
+int    **creat_s(char **s);
+void    sort_3(t_stack *a);
+void    sort_4(t_stack *a);
+void    sort_5(t_stack *a);
+void    big_sort(t_stack *a, t_stack *b);
+void	ft_freestr2(int **lst);
 
 
 

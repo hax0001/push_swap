@@ -1,58 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   creat_s.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 12:24:20 by nait-bou          #+#    #+#             */
-/*   Updated: 2024/07/15 13:07:30 by nait-bou         ###   ########.fr       */
+/*   Created: 2024/07/15 12:09:56 by nait-bou          #+#    #+#             */
+/*   Updated: 2024/07/15 13:03:47 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_freestr(char **lst)
+int **creat_s(char **s)
 {
-	char	*n1;
+	int	**result;
+	int	count;
+	int	i;
 
-	if (!lst)
-		return ;
-	while (*lst)
+	i = 0;
+	count = 0;
+	result = NULL;
+	while (s[count] != NULL)
+		count++;
+	result = malloc((count) * sizeof(int *));
+	if (!result)
+		error2();
+	while (count != 0)
 	{
-		n1 = *lst;
-		lst++;
-		free(n1);
+		result[i] = malloc(sizeof(int));
+		if (!result[i])
+			error2();
+		*result[i] = ft_atoi(s[i]);
+		i++;
+		count--;
 	}
-	*lst = NULL;
-}
-
-void	ft_freestr2(int **lst)
-{
-	int	*n1;
-
-	if (!lst)
-		return ;
-	while (*lst)
-	{
-		n1 = *lst;
-		lst++;
-		free(n1);
-	}
-	*lst = NULL;
-}
-
-void	ft_free(t_stack **lst)
-{
-	t_stack	*tmp;
-
-	if (!lst)
-		return ;
-	while (*lst)
-	{
-		tmp = (*lst)->next;
-		(*lst)->nbr = 0;
-		free(*lst);
-		*lst = tmp;
-	}
+	result[i] = NULL;
+	return (result);
 }

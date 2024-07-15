@@ -6,7 +6,7 @@
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 18:05:14 by prossi            #+#    #+#             */
-/*   Updated: 2024/06/27 10:32:48 by nait-bou         ###   ########.fr       */
+/*   Updated: 2024/07/15 12:36:13 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 typedef struct s_stack
 {
 	long			nbr;
+	int				rank;
 	struct s_stack	*next;
 }	t_stack;
 
