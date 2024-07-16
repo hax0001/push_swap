@@ -6,7 +6,7 @@
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 01:06:50 by nait-bou          #+#    #+#             */
-/*   Updated: 2024/07/07 18:16:30 by nait-bou         ###   ########.fr       */
+/*   Updated: 2024/07/16 10:51:33 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main(int ac, char **av)
 		error2();
 	}
 	if (check_sort(a) == 0)
-		write(1,"sort",4);
+		start_sort(a, av);
 	ft_free(&a);
 	return (0);
 }
