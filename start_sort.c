@@ -6,7 +6,7 @@
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 11:35:18 by nait-bou          #+#    #+#             */
-/*   Updated: 2024/07/16 12:11:42 by nait-bou         ###   ########.fr       */
+/*   Updated: 2024/07/17 19:44:19 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,12 @@ void start_sort(t_stack *a, char **str)
 	get_rank(a, str);
 	if (ft_lstsize(a) == 2)
 		sa(&a, 0);
-	if (ft_lstsize(a) == 3)
+	else if (ft_lstsize(a) == 3)
 		sort_3(a);
 	else if (ft_lstsize(a) == 4)
 		sort_4(a, b, 0);
 	else if (ft_lstsize(a) == 5)
-		sort_5(a);
+		sort_5(a, b);
 	else if (ft_lstsize(a) > 5)
 		big_sort(a, b);
 }

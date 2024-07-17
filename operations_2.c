@@ -6,7 +6,7 @@
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 12:18:46 by nait-bou          #+#    #+#             */
-/*   Updated: 2024/07/16 12:39:06 by nait-bou         ###   ########.fr       */
+/*   Updated: 2024/07/17 12:13:53 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,26 @@ void pa(t_stack **a, t_stack **b, int j)
 {
 	t_stack	*tmp;
 	
-	if (!*b)
+	if (*b == NULL)
 		return;
-	tmp = *a;
-	*a = *b;
-	*b = (*b)->next;
-	(*a)->next = tmp;
+	tmp = *b;
+	*b = tmp->next;
+	tmp->next = *a;
+	*a = tmp;
 	 if (j == 0)
 		write(1, "pa\n", 3);
 }
 
 void pb(t_stack **a, t_stack **b, int j)
 {
-	if (!*a)
-		return;
 	t_stack	*tmp;
 
-	tmp = *b;
-	*b = *a;
-	*a = (*a)->next;
-	(*b)->next = tmp;
+	if (!*a)
+		return;
+	tmp = *a;
+	*a = tmp->next;
+	tmp->next = *b;
+	*b = tmp;
 	 if (j == 0)
 		write(1, "pb\n", 3);
 }

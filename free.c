@@ -6,7 +6,7 @@
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 12:24:20 by nait-bou          #+#    #+#             */
-/*   Updated: 2024/07/15 13:07:30 by nait-bou         ###   ########.fr       */
+/*   Updated: 2024/07/17 19:43:00 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	ft_free(t_stack **lst)
 	{
 		tmp = (*lst)->next;
 		(*lst)->nbr = 0;
+		(*lst)->rank = 0;
 		free(*lst);
 		*lst = tmp;
 	}

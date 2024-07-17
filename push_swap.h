@@ -30,11 +30,15 @@ void	boble_sort(int **arr);
 int    **creat_s(char **s);
 void    sort_3(t_stack *a);
 void    sort_4(t_stack *a, t_stack *b, int n);
-void    sort_5(t_stack *a);
+void    sort_5(t_stack *a, t_stack *b);
 void    big_sort(t_stack *a, t_stack *b);
 void	ft_freestr2(int **lst);
-void    find_min(t_stack *a, t_stack *b, int i);
-
+void    find_min(t_stack **a, t_stack **b, int i);
+void    find_min_5(t_stack **a, t_stack **b, int i);
+void    push_to_b(t_stack *a, t_stack *b, int rang);
+void    push_to_a(t_stack *a, t_stack *b);
+int     find_index(t_stack *b);
+void    final_a(t_stack *a, t_stack *b, int index);
 
 
 #endif
