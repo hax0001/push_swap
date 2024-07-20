@@ -6,7 +6,7 @@
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 01:11:43 by nait-bou          #+#    #+#             */
-/*   Updated: 2024/07/06 15:19:09 by nait-bou         ###   ########.fr       */
+/*   Updated: 2024/07/20 18:07:53 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ t_stack *make_stack(int ac, char **av)
 	a = NULL;
 	if (ac < 2)
 	{
-		error2();
+		exit(0);
 	}
 	else if (ac == 2)
 	{

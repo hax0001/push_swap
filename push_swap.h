@@ -5,7 +5,6 @@
 # include <stdio.h>
 # include "Libft/libft.h"
 
-void 	print_stack(t_stack *stack);
 t_stack *make_stack(int ac, char **av);
 t_stack *sub_mak_stack(char *str, t_stack *a);
 long new_atoi(char *str, char **s, t_stack *a);
