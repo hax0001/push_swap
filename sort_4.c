@@ -6,7 +6,7 @@
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 12:49:39 by nait-bou          #+#    #+#             */
-/*   Updated: 2024/07/17 12:13:41 by nait-bou         ###   ########.fr       */
+/*   Updated: 2024/07/20 14:26:04 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,24 +34,23 @@ void find_min(t_stack **a, t_stack **b, int i)
 	}
 }
 
-void sort_4(t_stack *a, t_stack *b, int n)
+void sort_4(t_stack **a, t_stack **b, int n)
 {
 	int		d;
 	int		i;
 	t_stack	*tmp;
 
 	i = 0;
-	tmp = a;
+	d = 0;
+	tmp = *a;
 	if (n == 1)
 		d = 1;
-	else
-		d = 0;
 	while (tmp->rank != d)
 	{
 		tmp = tmp->next;
 		i++;
 	}
-	find_min(&a, &b, i);	
+	find_min(a, b, i);	
 	sort_3(a);
-	pa(&a, &b, 0);
+	pa(a, b, 0);
 }
