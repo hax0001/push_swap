@@ -6,13 +6,13 @@
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 12:49:39 by nait-bou          #+#    #+#             */
-/*   Updated: 2024/07/20 14:26:04 by nait-bou         ###   ########.fr       */
+/*   Updated: 2024/07/20 20:37:08 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void find_min(t_stack **a, t_stack **b, int i)
+void	find_min(t_stack **a, t_stack **b, int i)
 {
 	if (i == 0)
 		pb(a, b, 0);
@@ -34,7 +34,7 @@ void find_min(t_stack **a, t_stack **b, int i)
 	}
 }
 
-void sort_4(t_stack **a, t_stack **b, int n)
+void	sort_4(t_stack **a, t_stack **b, int n)
 {
 	int		d;
 	int		i;
@@ -50,7 +50,7 @@ void sort_4(t_stack **a, t_stack **b, int n)
 		tmp = tmp->next;
 		i++;
 	}
-	find_min(a, b, i);	
+	find_min(a, b, i);
 	sort_3(a);
 	pa(a, b, 0);
 }

@@ -6,12 +6,11 @@
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 01:23:07 by nait-bou          #+#    #+#             */
-/*   Updated: 2024/06/27 10:34:37 by nait-bou         ###   ########.fr       */
+/*   Updated: 2024/07/20 18:43:30 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 t_stack	*ft_lstnew(long content)
 {

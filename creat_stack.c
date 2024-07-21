@@ -6,18 +6,18 @@
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 01:11:43 by nait-bou          #+#    #+#             */
-/*   Updated: 2024/07/20 18:07:53 by nait-bou         ###   ########.fr       */
+/*   Updated: 2024/07/21 13:07:45 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int check_dup(t_stack *a)
+int	check_dup(t_stack *a)
 {
 	t_stack	*tmp;
-	
-	 while (a)
-	 {
+
+	while (a)
+	{
 		tmp = a->next;
 		while (tmp)
 		{
@@ -26,32 +26,38 @@ int check_dup(t_stack *a)
 			tmp = tmp->next;
 		}
 		a = a->next;
-	 }
-	 return (0);
+	}
+	return (0);
 }
 
-long new_atoi(char *str, char **s, t_stack *a)
+void	sub_atoi(char c, char **s, t_stack *a)
 {
-	int c;
-	long r;
+	if (!ft_isdigit(c))
+		error(s, a);
+}
+
+long	new_atoi(char *str, char **s, t_stack *a)
+{
+	int		c;
+	long	r;
 
 	c = 1;
 	r = 0;
 	while (*str == 32 || (*str >= 9 && *str <= 13))
 		str++;
-	if ((*str == '-' && *(str + 1) == '\0') || (*str == '+' && *(str + 1) == '\0'))
+	if ((*str == '-' && *(str + 1) == '\0') || (*str == '+' && *(str
+				+ 1) == '\0'))
 		error(s, a);
 	if (*str == '-')
 	{
 		c = (-1);
-		str++;	
+		str++;
 	}
 	if (*str == '+')
 		str++;
 	while (*str)
 	{
-		if (!ft_isdigit(*str))
-			error(s, a);
+		sub_atoi(*str, s, a);
 		r = r * 10 + *(str++) - '0';
 	}
 	if ((r * c) > 2147483647 || (r * c) < -2147483648)
@@ -59,7 +65,7 @@ long new_atoi(char *str, char **s, t_stack *a)
 	return (r * c);
 }
 
-t_stack *sub_mak_stack(char *str, t_stack *a)
+t_stack	*sub_mak_stack(char *str, t_stack *a)
 {
 	char	**s;
 	int		i;
@@ -78,7 +84,7 @@ t_stack *sub_mak_stack(char *str, t_stack *a)
 	return (a);
 }
 
-t_stack *make_stack(int ac, char **av)
+t_stack	*make_stack(int ac, char **av)
 {
 	int		i;
 	int		j;
@@ -93,12 +99,8 @@ t_stack *make_stack(int ac, char **av)
 	else if (ac == 2)
 	{
 		a = sub_mak_stack(av[1], a);
-	}		
+	}
 	else
-		while (i < ac)
-		{
-			a = sub_mak_stack(av[i], a);
-			i++;
-		}
+		a = make_it(ac, a, av);
 	return (a);
 }

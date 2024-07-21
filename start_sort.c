@@ -6,7 +6,7 @@
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 11:35:18 by nait-bou          #+#    #+#             */
-/*   Updated: 2024/07/20 14:47:59 by nait-bou         ###   ########.fr       */
+/*   Updated: 2024/07/20 21:06:17 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ void	boble_sort(int **arr)
 	}
 }
 
-void get_rank(t_stack *a, char **str)
+void	get_rank(t_stack *a, char **str)
 {
 	t_stack	*temp;
-	t_stack *er;
+	t_stack	*er;
 	int		**s;
 	int		i;
-	
+
 	i = 0;
 	temp = a;
 	er = a;
@@ -56,7 +56,6 @@ void get_rank(t_stack *a, char **str)
 		{
 			if (temp->nbr == *s[i])
 				temp->rank = i;
-
 			i++;
 		}
 		i = 0;
@@ -66,10 +65,10 @@ void get_rank(t_stack *a, char **str)
 	free(s);
 }
 
-void start_sort(t_stack **a, char **str)
+void	start_sort(t_stack **a, char **str)
 {
 	t_stack	*b;
-	
+
 	b = NULL;
 	get_rank(*a, str);
 	if (ft_lstsize(*a) == 2)

@@ -6,7 +6,7 @@
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 18:05:14 by prossi            #+#    #+#             */
-/*   Updated: 2024/07/15 12:36:13 by nait-bou         ###   ########.fr       */
+/*   Updated: 2024/07/20 18:44:13 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 # include <stdint.h>
 # include <stdarg.h>
 # include <stdio.h>
-
-
 
 typedef struct s_stack
 {
@@ -82,6 +80,5 @@ void	ft_putstr(char *s);
 void	ft_putnbr(int n);
 int		ft_strlen2(const char *s);
 char	**free_array(char **ptr, int i);
-
 
 #endif

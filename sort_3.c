@@ -6,33 +6,33 @@
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 12:45:49 by nait-bou          #+#    #+#             */
-/*   Updated: 2024/07/20 13:06:27 by nait-bou         ###   ########.fr       */
+/*   Updated: 2024/07/20 21:18:14 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void sort_3(t_stack **a)
+void	sort_3(t_stack **a)
 {
-	int A;
-    int B;
-    int C;
+	int	r;
+	int	s;
+	int	t;
 
-    A = (*a)->nbr;
-    B = (*a)->next->nbr;
-    C = (*a)->next->next->nbr;
-    	if (A > B && B > C)
+	r = (*a)->nbr;
+	s = (*a)->next->nbr;
+	t = (*a)->next->next->nbr;
+	if (r > s && s > t)
 	{
 		sa(a, 0);
 		rra(a, 0);
 	}
-	else if (A > C && C > B)
+	else if (r > t && t > s)
 		ra(a, 0);
-	else if (A > B)
+	else if (r > s)
 		sa(a, 0);
-	else if (B > C && A > C)
+	else if (s > t && r > t)
 		rra(a, 0);
-	else if (B > C)
+	else if (s > t)
 	{
 		sa(a, 0);
 		ra(a, 0);

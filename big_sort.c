@@ -6,13 +6,13 @@
 /*   By: nait-bou <nait-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 12:54:01 by nait-bou          #+#    #+#             */
-/*   Updated: 2024/07/20 13:17:01 by nait-bou         ###   ########.fr       */
+/*   Updated: 2024/07/20 20:11:42 by nait-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void final_a(t_stack **a, t_stack **b, int index)
+void	final_a(t_stack **a, t_stack **b, int index)
 {
 	t_stack	*tmp_a;
 	t_stack	*tmp_b;
@@ -39,9 +39,9 @@ void final_a(t_stack **a, t_stack **b, int index)
 	pa(a, b, 0);
 }
 
-int find_index(t_stack **b)
+int	find_index(t_stack **b)
 {
-    int		max_value;
+	int		max_value;
 	int		index;
 	int		max_index;
 	t_stack	*current;
@@ -63,7 +63,7 @@ int find_index(t_stack **b)
 	return (max_index);
 }
 
-void push_to_a(t_stack **a, t_stack **b)
+void	push_to_a(t_stack **a, t_stack **b)
 {
 	int		index;
 	t_stack	*tmp_a;
@@ -78,7 +78,7 @@ void push_to_a(t_stack **a, t_stack **b)
 	}
 }
 
-void push_to_b(t_stack **a, t_stack **b, int range)
+void	push_to_b(t_stack **a, t_stack **b, int range)
 {
 	int		i;
 	t_stack	*tmp;
@@ -103,21 +103,21 @@ void push_to_b(t_stack **a, t_stack **b, int range)
 		else
 			ra(a, 0);
 		tmp = *a;
-    }
+	}
 }
 
-void big_sort(t_stack **a, t_stack **b)
+void	big_sort(t_stack **a, t_stack **b)
 {
-	int     rang;
-    t_stack *tmp_a;
-    t_stack *tmp_b;
-    
-    tmp_a = *a;
-    tmp_b = *b;
-    if (ft_lstsize(*a) <= 250)
-        rang = 15;
-    else
-        rang = 30;
-    push_to_b(a, b, rang);
-    push_to_a(a, b);
+	int		rang;
+	t_stack	*tmp_a;
+	t_stack	*tmp_b;
+
+	tmp_a = *a;
+	tmp_b = *b;
+	if (ft_lstsize(*a) <= 250)
+		rang = 15;
+	else
+		rang = 30;
+	push_to_b(a, b, rang);
+	push_to_a(a, b);
 }
